@@ -44,24 +44,7 @@ class ApplicationController < Sinatra::Base
     erb :'/tweets'
   end 
   
-  get '/login' do 
-    logged_in? ? redirect('/tweets') : erb(:'/login')
-  end 
-  
-  post '/login' do 
-    user = User.find_by(username: params[:username])
-    if user.authenticate(params[:password])
-      log_in(user)
-      redirect '/tweets'
-    else
-      redirect '/login'
-    end 
-  end 
-  
-  get '/logout' do 
-    flash[:notice] = "You have successfully logged out"
-    logged_in? ? logout : redirect('/login')
-  end 
+ 
   
   helpers do 
     def current_user 
