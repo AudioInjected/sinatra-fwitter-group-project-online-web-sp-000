@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
   
-  
+  use Rack::Flash
   
  #  'enable :sessions' was causing the login to loop in the browser even though all tests were passing. The session was getting cleared from one controller action to the other
  
@@ -60,6 +60,7 @@ class ApplicationController < Sinatra::Base
   end 
   
   get '/logout' do 
+    
     logged_in? ? logout : redirect('/login')
   end 
   
