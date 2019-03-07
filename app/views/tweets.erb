@@ -1,7 +1,6 @@
 <h1>Welcome, <%=@user.username%></h1>
 <%Tweet.all.each do |tweet|%>
-  <h3><%=tweet.user.username%></h3>
-  <h4><%=tweet.content%></h4>
+  <h3><%=tweet.user.username%>: <%=tweet.content%></h3>
 <%end%>
 
 <form action="/logout" method="GET">
