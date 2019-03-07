@@ -60,7 +60,7 @@ class ApplicationController < Sinatra::Base
   end 
   
   get '/logout' do 
-    
+    flash[:notice] = "You have successfully logged out"
     logged_in? ? logout : redirect('/login')
   end 
   
