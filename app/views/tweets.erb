@@ -1,7 +1,7 @@
 <h1>Welcome, <%=@user.username%></h1>
 <%Tweet.all.each do |tweet|%>
 <%binding.pry%>
-  <h3><%=tweet.user%> <%=tweet.content%></h3>
+  <h3><%=tweet.username%> <%=tweet.content%></h3>
 <%end%>
 
 <form action="/logout" method="GET">
